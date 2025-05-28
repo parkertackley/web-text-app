@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:4.2.5
+    ports:
+      - '27017:27017'
+  app:
+    build: .
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/user_creds
+    ports:
+      - '8080:8080'
+    depends_on:
+      - mongo
+    volumes:
+      - ./user_images:/app/public/images/user_images

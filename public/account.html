@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{url_for('static', filename='styles.css')}}" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <title>Profile</title>
+  </head>
+  <body class="roboto-regular">
+
+    <div class="menu">
+      <form id="menuForm" method="post" action="/">
+        <button type="submit">Home</button>
+      </form>
+      <form id="menuForm" method="post" action="/account">
+        <button type="submit">My Account</button>
+      </form>
+    </div>
+
+    <div id="user-account">
+      <h3>Hello, e!</h3>
+    </div>
+
+    <div>
+      <h4>Update Username</h4>
+      <form id="update-username-form">
+        <input id="update-username" name="username" type="text" placeholder="New Username">
+        <br>
+        <input type="submit" value="Update Username">
+      </form>
+    </div>
+    <div>
+      <h4>Change Password</h4>
+      <form id="change-password-form">
+        <input id="change-password" name= "password" type="password" placeholder="New Password">
+        <br>
+        <input id="confirm-change-password" name= "confirmPassword" type="password" placeholder="Confirm New Password">
+        <br>
+        <input type="submit" value="Change Password">
+      </form>
+    </div>
+
+    <script src="{{url_for('static', filename='functions.js')}}"></script>
+    <script src="{{url_for('static', filename='account.js')}}"></script>
+  </body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{url_for('static', filename='styles.css')}}" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <title>Team &lt;div&gt;as</title>
+  </head>
+  <body class="roboto-regular">
+
+    <div class="menu">
+      <form id="menuForm" method="post" action="/">
+        <button type="submit">Home</button>
+      </form>
+      <form id="menuForm" method="post" action="/account">
+        <button type="submit">My Account</button>
+      </form>
+    </div>
+    
+    <h1>The &lt;div&gt;as Landing Page</h1>
+
+    <img id="logo" src="{{url_for('static', filename='images/ublogo.jpg')}}" alt="UB Logo">
+    <br>
+
+    <div id="user-credentials">
+
+      <form id="reg-form">
+        <input id="reg-username" type="text" placeholder="Username">
+        <br>
+        <input id="reg-password" type="password" placeholder="Password">
+        <br>
+        <input id="reg-confirm-password" type="password" placeholder="Confirm Password">
+        <br>
+        <input type="submit" value="Register">
+      </form>
+      <br>
+      <br>
+      <form id="login-form">
+        <input id="login-username" type="text" placeholder="Username">
+        <br>
+        <input id="login-password" type="password" placeholder="Password">
+        <br>
+        <input type="submit" value="Login">
+      </form>
+
+    </div>
+
+    <br>
+    <br>
+
+    <div id="tabs">
+      <button class="tablink" id="defaulttab" onclick="openTab(event, 'Serious')">Serious</button>
+      <button class="tablink" onclick="openTab(event, 'NonSerious')">Non-Serious</button>
+      <button class="tablink" onclick="openTab(event, 'DirectMessage')">Direct Messages</button>
+    </div>
+
+    <div id="Serious" class="tabcontent">
+      <h3>Serious Posts</h3>
+      <div id="serious-posts"></div>
+      <form onsubmit="submitPost('Serious'); return false;" enctype="multipart/form-data">
+        <textarea id="serious-post-content" placeholder="Type message..."></textarea>
+        <input type="file" id = "serious-post-content-image" accept="image/*">
+        <label for="delay">Time Delay in seconds: </label>
+        <input type="number" id="delay" min="0" step="1" value="0">
+        <button type="submit">Post</button>
+      </form>
+    </div>
+
+    <div id="NonSerious" class="tabcontent">
+      <h3>Non-Serious Posts</h3>
+      <div id="non-serious-posts"></div>
+      <form onsubmit="submitPost('NonSerious'); return false;" enctype="multipart/form-data">
+        <textarea id="non-serious-post-content" placeholder="Type message..."></textarea>
+        <input type="file" id="non-serious-post-content-image" accept="image/*">
+        <label for="delay" style="font-size: 10px;">Time Delay in seconds: </label>
+        <input type="number" id="delay" min="0" step="1" value="0">
+        <button type="submit">Post</button>
+      </form>
+    </div>
+
+    <div id="DirectMessage" class="tabcontent">
+      <h3>Direct Messages</h3>
+      <div id="user-list"></div><br>
+      <div id="direct-message-posts"></div>
+      <form onsubmit="submitPost('DirectMessage'); return false;" enctype="multipart/form-data">
+        <textarea id="direct-message-post-content" placeholder="Type message..."></textarea>
+        <input type="file" id="direct-message-post-content-image" accept="image/*"><br>
+        <label for="delay">Time Delay in seconds: </label>
+        <input type="number" id="delay" min="0" step="1" value="0">
+        <button type="submit">Post</button>
+      </form>
+    </div>
+
+
+    <script src="{{url_for('static', filename='functions.js')}}"></script>
+    <script src="{{url_for('static', filename='account.js')}}"></script>
+  </body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</html>

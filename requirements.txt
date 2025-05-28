@@ -1,0 +1,5 @@
+pymongo
+flask-pymongo
+python-dotenv
+bcrypt
+flask-socketio

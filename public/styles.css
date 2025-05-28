@@ -1,0 +1,91 @@
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+#logo {
+  width: 200px;
+}
+
+#post-message {
+  width: 300px;
+  height: 100px;
+  resize: none;
+}
+
+.tabcontent {
+  display:none;
+  padding-top: 50px;
+  padding: 6px 12px;
+  border: 1px solid rgb(181, 181, 181);
+  border-top: none;
+}
+
+.tablink {
+  background-color: gray;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 33%;
+}
+
+.tablink:hover {
+  background-color:rgb(206, 206, 206);
+}
+
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 20px;
+  height: 100%;
+}
+
+.tablink.active {
+    background-color:aquamarine;
+    color: rgb(105, 105, 105);
+}
+
+.post {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgb(179, 179, 179);
+}
+
+.post-likes {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu {
+  background-color: gray;
+  color: white;
+  font-size: 17px;
+  padding: 14px 16px;
+}
+
+.menu button {
+  background-color: gray;
+  color: white;
+  font-size: 17px;
+  padding: 14px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.menu button:active {
+  background-color:aquamarine;
+    color: rgb(105, 105, 105);
+}
+
+.menu button:hover {
+  background-color: rgb(206, 206, 206);
+}
