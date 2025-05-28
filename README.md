@@ -1,4 +1,4 @@
-# thedivas CSE 312 WebApp
+# WebApp
 
 ## My Account
 
